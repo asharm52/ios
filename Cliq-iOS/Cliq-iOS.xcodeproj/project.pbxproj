@@ -13,6 +13,8 @@
 		0EFD3BBF19E9C16600F1015F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EFD3BBD19E9C16600F1015F /* Main.storyboard */; };
 		0EFD3BC119E9C16600F1015F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EFD3BC019E9C16600F1015F /* Images.xcassets */; };
 		0EFD3BCD19E9C16600F1015F /* Cliq_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFD3BCC19E9C16600F1015F /* Cliq_iOSTests.swift */; };
+		0EFD3BDC19E9CB9000F1015F /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EFD3BDB19E9CB9000F1015F /* FacebookSDK.framework */; };
+		0EFD3BE019E9CE8500F1015F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFD3BDF19E9CE8500F1015F /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,9 @@
 		0EFD3BC619E9C16600F1015F /* Cliq-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cliq-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EFD3BCB19E9C16600F1015F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EFD3BCC19E9C16600F1015F /* Cliq_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cliq_iOSTests.swift; sourceTree = "<group>"; };
+		0EFD3BDA19E9C7BF00F1015F /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
+		0EFD3BDB19E9CB9000F1015F /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		0EFD3BDF19E9CE8500F1015F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EFD3BDC19E9CB9000F1015F /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +65,7 @@
 		0EFD3BA919E9C16600F1015F = {
 			isa = PBXGroup;
 			children = (
+				0EFD3BD619E9C46700F1015F /* Frameworks */,
 				0EFD3BB419E9C16600F1015F /* Cliq-iOS */,
 				0EFD3BC919E9C16600F1015F /* Cliq-iOSTests */,
 				0EFD3BB319E9C16600F1015F /* Products */,
@@ -77,9 +84,11 @@
 		0EFD3BB419E9C16600F1015F /* Cliq-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				0EFD3BDA19E9C7BF00F1015F /* Bridge-Header.h */,
 				0EFD3BB719E9C16600F1015F /* AppDelegate.swift */,
 				0EFD3BB919E9C16600F1015F /* FirstViewController.swift */,
 				0EFD3BBB19E9C16600F1015F /* SecondViewController.swift */,
+				0EFD3BDF19E9CE8500F1015F /* LoginViewController.swift */,
 				0EFD3BBD19E9C16600F1015F /* Main.storyboard */,
 				0EFD3BC019E9C16600F1015F /* Images.xcassets */,
 				0EFD3BB519E9C16600F1015F /* Supporting Files */,
@@ -110,6 +119,14 @@
 				0EFD3BCB19E9C16600F1015F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0EFD3BD619E9C46700F1015F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0EFD3BDB19E9CB9000F1015F /* FacebookSDK.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EFD3BE019E9CE8500F1015F /* LoginViewController.swift in Sources */,
 				0EFD3BBC19E9C16600F1015F /* SecondViewController.swift in Sources */,
 				0EFD3BB819E9C16600F1015F /* AppDelegate.swift in Sources */,
 				0EFD3BBA19E9C16600F1015F /* FirstViewController.swift in Sources */,
@@ -329,9 +347,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/arjunsarode/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = "Cliq-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cliq-iOS/Bridge-Header.h";
 			};
 			name = Debug;
 		};
@@ -340,9 +363,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/arjunsarode/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = "Cliq-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cliq-iOS/Bridge-Header.h";
 			};
 			name = Release;
 		};

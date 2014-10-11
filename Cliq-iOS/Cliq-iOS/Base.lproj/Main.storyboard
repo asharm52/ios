@@ -125,11 +125,12 @@
                     </view>
                     <connections>
                         <outlet property="fbLoginView" destination="1bP-sH-Jct" id="Poh-K3-WrA"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="loggedIn" id="zG0-Yn-iZE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p0y-kT-5ZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-725" y="-13"/>
+            <point key="canvasLocation" x="-757" y="-23"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

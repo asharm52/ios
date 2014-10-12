@@ -8,18 +8,42 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet var txtTitle : UITextField!
+    @IBOutlet var txtDesc : UITextField!
+    
                             
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // Events that are triggered when the create event button is clicked
+    @IBAction func btnAddEvent_Click(sender: UIButton) {
+        
+        eventMgr.addEvent(txtTitle.text, desc: txtDesc.text)
+        txtTitle.text = ""
+        txtDesc.text = ""
+        self.tabBarController?.selectedIndex = 0
+    }
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
 
+    
+    // UITextFieldDelegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 
 }
 

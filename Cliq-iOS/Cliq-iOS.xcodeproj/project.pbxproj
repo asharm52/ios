@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0ED99FC819EB258C00CCEB79 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED99FC719EB258C00CCEB79 /* EventManager.swift */; };
 		0EFD3BB819E9C16600F1015F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFD3BB719E9C16600F1015F /* AppDelegate.swift */; };
 		0EFD3BBA19E9C16600F1015F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFD3BB919E9C16600F1015F /* FirstViewController.swift */; };
 		0EFD3BBC19E9C16600F1015F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFD3BBB19E9C16600F1015F /* SecondViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0ED99FC719EB258C00CCEB79 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		0EFD3BB219E9C16600F1015F /* Cliq-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cliq-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EFD3BB619E9C16600F1015F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EFD3BB719E9C16600F1015F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				0EFD3BB919E9C16600F1015F /* FirstViewController.swift */,
 				0EFD3BBB19E9C16600F1015F /* SecondViewController.swift */,
 				0EFD3BDF19E9CE8500F1015F /* LoginViewController.swift */,
+				0ED99FC719EB258C00CCEB79 /* EventManager.swift */,
 				0EFD3BBD19E9C16600F1015F /* Main.storyboard */,
 				0EFD3BC019E9C16600F1015F /* Images.xcassets */,
 				0EFD3BB519E9C16600F1015F /* Supporting Files */,
@@ -178,9 +181,11 @@
 				TargetAttributes = {
 					0EFD3BB119E9C16600F1015F = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 4GY3W43TYH;
 					};
 					0EFD3BC519E9C16600F1015F = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 4GY3W43TYH;
 						TestTargetID = 0EFD3BB119E9C16600F1015F;
 					};
 				};
@@ -228,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ED99FC819EB258C00CCEB79 /* EventManager.swift in Sources */,
 				0EFD3BE019E9CE8500F1015F /* LoginViewController.swift in Sources */,
 				0EFD3BBC19E9C16600F1015F /* SecondViewController.swift in Sources */,
 				0EFD3BB819E9C16600F1015F /* AppDelegate.swift in Sources */,
@@ -378,6 +384,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -389,6 +397,7 @@
 				INFOPLIST_FILE = "Cliq-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cliq-iOS.app/Cliq-iOS";
 			};
 			name = Debug;
@@ -397,6 +406,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -404,6 +415,7 @@
 				INFOPLIST_FILE = "Cliq-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cliq-iOS.app/Cliq-iOS";
 			};
 			name = Release;
@@ -427,6 +439,7 @@
 				0EFD3BD219E9C16600F1015F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0EFD3BD319E9C16600F1015F /* Build configuration list for PBXNativeTarget "Cliq-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -435,6 +448,7 @@
 				0EFD3BD519E9C16600F1015F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,8 +7,45 @@
 //
 
 import UIKit
+import CoreLocation
 
-class FirstViewController: UIViewController, FBLoginViewDelegate {
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
+    
+    @IBOutlet var tblEvents : UITableView!
+    
+    let lm = CLLocationManager()
+    
+    func findMyLocation(){
+        lm.delegate = self
+        lm.desiredAccuracy = kCLLocationAccuracyBest
+        lm.startUpdatingLocation()
+        println(lm.location)
+    }
+    
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        println("Error while updating location ")
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return eventMgr.events.count
+    }
+
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "test")
+        
+        cell.textLabel?.text = eventMgr.events[indexPath.row].title
+        cell.detailTextLabel?.text = eventMgr.events[indexPath.row].desc
+        
+        return cell
+        
+    }
+    
+    // Called when user returns to this view
+    override func viewWillAppear(animated: Bool) {
+        tblEvents.reloadData()
+    }
     
     
     override func viewDidLoad() {
@@ -20,6 +57,7 @@ class FirstViewController: UIViewController, FBLoginViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
 
 }

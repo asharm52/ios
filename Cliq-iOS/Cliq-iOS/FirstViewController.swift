@@ -27,26 +27,26 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // Counts how many events there are to set the number of rows in the table
         return eventMgr.events.count
     }
 
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-//        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "test")
-//        
-//        cell.textLabel?.text = eventMgr.events[indexPath.row].title
-//        cell.detailTextLabel?.text = eventMgr.events[indexPath.row].desc
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "test")
         
-        // TODO
-        // Add values to each of the fields in the custom cell based on the info in the event struct
-        var cell: EventCardCell = tableView.dequeueReusableCellWithIdentifier("cell") as EventCardCell
-        
-        
+        cell.textLabel?.text = eventMgr.events[indexPath.row].title
+        cell.detailTextLabel?.text = eventMgr.events[indexPath.row].desc
         
         return cell
         
+    }
+    func findMyTime(){
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: date)
+        let hour = components.hour
+        let minutes = components.minute
     }
     
     // Called when user returns to this view
@@ -58,10 +58,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Register custom cell
-        var nib = UINib(nibName: "viewEventCardCell", bundle: nil)
-        tblEvents.registerNib(nib, forCellReuseIdentifier: "cell")
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,4 +68,3 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
 
 }
-

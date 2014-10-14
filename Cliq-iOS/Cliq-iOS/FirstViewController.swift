@@ -41,6 +41,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
         
     }
+    func findMyTime(){
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: date)
+        let hour = components.hour
+        let minutes = components.minute
+    }
     
     // Called when user returns to this view
     override func viewWillAppear(animated: Bool) {
@@ -61,4 +68,3 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
 
 }
-

@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
             endingLineNumber = "32"
-            landmarkName = "addEvent(_:tags:timePosted:groupSize:location:name:avatar:)"
+            landmarkName = "addEvent(_:tags:timePosted:groupSize:lat:long:name:avatar:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

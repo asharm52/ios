@@ -8,14 +8,30 @@
 
 import UIKit
 
-class SecondViewController: UIViewController, UITextFieldDelegate {
+class SecondViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
     
     @IBOutlet var txtTitle : UITextField!
     @IBOutlet var txtDesc : UITextField!
     
-                            
+    
+    var manager: OneShotLocationManager?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        manager = OneShotLocationManager()
+        manager!.fetchWithCompletion {location, error in
+            
+            // fetch location or an error
+            if let loc = location {
+                println(location)
+            } else if let err = error {
+                println(err.localizedDescription)
+            }
+            self.manager = nil
+        }
+
         
     }
 
@@ -27,9 +43,14 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     // Events that are triggered when the create event button is clicked
     @IBAction func btnAddEvent_Click(sender: UIButton) {
         
-        eventMgr.addEvent(txtTitle.text, desc: txtDesc.text)
-        txtTitle.text = ""
-        txtDesc.text = ""
+        // TODO
+        // Get all the information that we need to create a new event
+        
+        
+        
+//        eventMgr.addEvent(txtTitle.text, desc: txtDesc.text)
+//        txtTitle.text = ""
+//        txtDesc.text = ""
         self.tabBarController?.selectedIndex = 0
     }
     
